@@ -9,6 +9,8 @@ console.log(__dirname)
 
 // Define paths for Express config
 const app = express()
+const port = process.env.PORT || 3000
+
 const publicDir = path.join(__dirname, '../public')
 const views = path.join(__dirname, '../templates/views')
 const partials = path.join(__dirname, '../templates/partials')
@@ -95,6 +97,6 @@ app.get('*', (req, res)=>{
     })
 })
 
-app.listen(3000, ()=>{
-    console.log('Server is up on port 3000')
+app.listen(port, ()=>{
+    console.log('Server is up on port ' + port)
 })
